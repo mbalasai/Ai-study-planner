@@ -97,9 +97,15 @@ export const AuthProvider = ({ children }) => {
         const { data, error } = await insforge.auth.signUp({
             email,
             password,
-            options: { data: { name } }
+            name
         });
         if (error) throw error;
+        
+        if (data?.accessToken && data?.user) {
+            const profile = await fetchProfileWithStreak(data.user.id);
+            setUser({ ...data.user, ...profile });
+        }
+        
         return data;
     };
 

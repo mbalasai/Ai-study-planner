@@ -24,13 +24,12 @@ const Register = () => {
         setError('');
         setLoading(true);
         try {
-            await register(name, email, password);
-            // Auto-login after successful registration
-            try {
-                await login(email, password);
+            const data = await register(name, email, password);
+            
+            if (data?.accessToken) {
+                // Auto-logged in!
                 navigate('/');
-            } catch {
-                // Registration succeeded but auto-login failed — guide them to login
+            } else {
                 setSuccess('Account created! Please sign in.');
                 setTimeout(() => navigate('/login'), 2000);
             }
@@ -42,8 +41,8 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-100 to-indigo-100 dark:from-slate-900 dark:to-slate-800 p-4">
-            <div className="w-full max-w-md glass p-8 rounded-3xl relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-100 to-indigo-100 dark:from-slate-900 dark:to-slate-800 p-4 sm:p-6">
+            <div className="w-full max-w-md glass p-6 sm:p-8 rounded-3xl relative overflow-hidden">
                 <div className="absolute -top-20 -left-20 w-40 h-40 bg-indigo-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-20 animate-blob" />
                 <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-primary-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-20 animate-blob animation-delay-2000" />
 
