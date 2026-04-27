@@ -71,17 +71,17 @@ const Dashboard = () => {
             {/* Add Subject Card */}
             <div className="glass p-6 rounded-2xl max-w-xl">
                 <h3 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">Start a New Subject</h3>
-                <form onSubmit={handleAddSubject} className="flex space-x-4">
+                <form onSubmit={handleAddSubject} className="flex flex-col sm:flex-row gap-3 sm:space-x-4">
                     <input
                         type="text"
                         value={newSubject}
                         onChange={(e) => setNewSubject(e.target.value)}
                         placeholder="e.g. Data Structures & Algorithms"
-                        className="flex-1 px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white"
+                        className="flex-1 px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white w-full"
                     />
                     <button
                         type="submit"
-                        className="px-6 py-3 bg-gradient-to-r from-primary-500 to-indigo-600 hover:from-primary-600 hover:to-indigo-700 text-white rounded-xl font-medium shadow-md flex items-center space-x-2 transition-transform hover:-translate-y-0.5"
+                        className="px-6 py-3 w-full sm:w-auto justify-center bg-gradient-to-r from-primary-500 to-indigo-600 hover:from-primary-600 hover:to-indigo-700 text-white rounded-xl font-medium shadow-md flex items-center space-x-2 transition-transform hover:-translate-y-0.5"
                     >
                         <Plus size={20} />
                         <span>Add</span>

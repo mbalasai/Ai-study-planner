@@ -127,7 +127,7 @@ BEGIN
   VALUES (
     new.id,
     new.email,
-    COALESCE(new.raw_user_meta_data->>'name', 'Student'),
+    COALESCE(new.metadata->>'name', 'Student'),
     1,
     CURRENT_DATE
   )
