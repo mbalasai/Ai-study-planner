@@ -1,8 +1,8 @@
 import { createClient } from '@insforge/sdk';
 
 const insforge = createClient({
-    baseUrl: 'https://ruhpkm82.ap-southeast.insforge.app',
-    anonKey: 'ik_5fce0719a9b62daa9b0dc0c8d068dc2d'
+    baseUrl: 'https://umbri88d.ap-southeast.insforge.app/',
+    anonKey: 'ik_7db8414a43d1a0fcc88da13c3dabe2db'
 });
 
 async function testSignup() {
