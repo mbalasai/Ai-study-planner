@@ -20,8 +20,8 @@ You do not need to deploy a traditional backend API server. InsForge handles dat
    - **Framework Preset**: Vite
    - **Root Directory**: `frontend`
 5. Under **Environment Variables**, you MUST add the following:
-   - `VITE_INSFORGE_URL` = `https://ruhpkm82.ap-southeast.insforge.app`
-   - `VITE_INSFORGE_ANON_KEY` = `ik_5fce0719a9b62daa9b0dc0c8d068dc2d`
+   - `VITE_INSFORGE_URL` = `https://umbri88d.ap-southeast.insforge.app/`
+   - `VITE_INSFORGE_ANON_KEY` = `ik_7db8414a43d1a0fcc88da13c3dabe2db`
 6. Click **Deploy**. Vercel will build your React application and give you a live production URL.
 
 ---
